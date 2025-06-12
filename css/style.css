@@ -1,0 +1,119 @@
+/* === Estilo base (mobile first) === */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: white;
+  padding: 40px 24px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 700px;
+  transition: all 0.3s ease-in-out;
+}
+
+h1 {
+  background: linear-gradient(to right, #ff4081, #f50057);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.espacador {
+  height: 30px;
+}
+
+button {
+  background-color: #e91e63;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #c2185b;
+}
+
+.heart {
+  width: 80px;
+  height: 72px;
+  position: relative;
+  margin: 30px auto 30px auto;
+  background-color: red;
+  transform: rotate(-45deg);
+  animation: beat 1s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 72px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -40px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 40px;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.1);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 60px 80px;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .heart {
+    width: 100px;
+    height: 90px;
+  }
+
+  .heart::before,
+  .heart::after {
+    width: 100px;
+    height: 90px;
+  }
+
+  .heart::after {
+    left: 50px;
+  }
+
+  .heart::before {
+    top: -50px;
+  }
+}
